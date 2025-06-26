@@ -1,4 +1,20 @@
-//js script for image enlargment in achievements scetion
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('nav');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
+
+
+const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 600) {
+      navMenu.classList.remove('show');
+    }
+  });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const images = document.querySelectorAll('.zoomin');
